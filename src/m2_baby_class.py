@@ -3,8 +3,8 @@ A   Baby   class and functions that use/test it.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Valeria Paiz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #  Step 2a:  Implement a class called   Baby   that has a constructor method
 #            (__init__) and two other methods, as described below.
@@ -108,8 +108,30 @@ def main():
 #
 ###############################################################################
 
+class Baby(object):
+    """Constructs a Baby object"""
+
+    def __init__(self, name):
+        self.baby_name = name
+        self.hour = 0
+        print("Hello baby {}!".format(self.baby_name))
+
+    def feed_baby(self):
+        print("Thank you for feeding baby {}.".format(self.baby_name))
+        self.hour = 0
+
+    def hour_passes(self):
+        self.hour = self.hour + 1
+        if self.hour == 1:
+            print("Baby {} is sleeping.".format(self.baby_name))
+        elif self.hour == 2:
+            print("Baby {} is awake.  Time for food.".format(self.baby_name))
+        else:
+            print("Baby {} is CRYING uncontrollably!  Feed the Baby!".format(self.baby_name))
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
+
 main()
