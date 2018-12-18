@@ -275,14 +275,13 @@ class CapitalT(object):
         #     b. Look at the Console output.  Does it indicate any errors?
         #     c. Compare the graphics window to the   move_by.pdf   pictures.
         #        They should look exactly the same as each other.
-        #
         #        Note: the pdf shows the different locations that
         #        the T moves through, but there is only one T at any moment.
         # ---------------------------------------------------------------------
 
         self.v_rect.corner_1.x = self.v_rect.corner_1.x+dx
         self.v_rect.corner_2.x = self.v_rect.corner_2.x + dx
-        self.v_rect.corner_1.y = self.v_rect.corner_1.y+ dy
+        self.v_rect.corner_1.y = self.v_rect.corner_1.y + dy
         self.v_rect.corner_2.y = self.v_rect.corner_2.y + dy
 
         self.h_rect.corner_1.x = self.h_rect.corner_1.x + dx
@@ -332,4 +331,6 @@ class CapitalT(object):
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
+
 main()
