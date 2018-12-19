@@ -95,8 +95,6 @@ def run_test_clone():
         t = first_t.clone()
         if k < 2:
             t.set_colors('white', 'black')
-        else:
-            t.set_colors('blue', 'cyan')
         t.move_by(100 * k, 20 * k)
         t.attach_to(window)
     first_t.move_by(0, 200)
@@ -326,7 +324,9 @@ class CapitalT(object):
         height = self.v_rect.get_upper_left_corner().y + self.v_rect.get_lower_left_corner().y - thickness * 1.5
         width = self.h_rect.get_upper_right_corner().x + self.h_rect.get_upper_left_corner().x - thickness * 1.5
         intersection_center = rg.Point((self.h_rect.get_upper_left_corner().x + (width/2)), (self.h_rect.get_upper_left_corner().y + thickness/1.5))
-        return CapitalT(intersection_center, width, height, thickness)
+        newT = CapitalT(intersection_center, width, height, thickness)
+        newT.set_colors(self.h_rect.fill_color, self.h_rect.outline_color)
+        return newT
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
